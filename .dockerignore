@@ -1,0 +1,42 @@
+# Секреты
+.env
+*.env
+!.env.example
+
+# Данные бота на VPS (они монтируются volume'ом, в образе не нужны)
+data/
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+venv/
+env/
+.venv/
+
+# Тесты/кеши
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Документация
+README.md
+*.md
+
+# Временные
+*.log
+*.tmp
+*.bak

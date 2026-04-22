@@ -1,0 +1,26 @@
+services:
+  wb_bot:
+    build: .
+    container_name: wb_reviews_bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      # БД и файлы хранятся на хосте — переживут пересборку образа
+      - ./data:/app/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    # Мягкие лимиты ресурсов — чтобы бот не съел весь VPS при огромных сборах
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    healthcheck:
+      test: ["CMD-SHELL", "pgrep -f 'python bot.py' > /dev/null || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s

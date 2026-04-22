@@ -1,0 +1,58 @@
+# ─── Секреты (никогда не коммитить!) ────────────────────────────────────────
+.env
+*.env
+!.env.example
+
+# ─── Данные бота (БД, выгруженные файлы, логи) ──────────────────────────────
+data/
+!data/.gitkeep
+
+# ─── Python ─────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Виртуальные окружения
+venv/
+env/
+.venv/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ─── Тесты / покрытие ───────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+# ─── IDE ────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ─── macOS / Windows / Linux мусор ──────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ─── Временные файлы ────────────────────────────────────────────────────────
+*.log
+*.tmp
+*.bak
